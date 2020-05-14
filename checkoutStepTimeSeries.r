@@ -12,7 +12,7 @@ checkoutStep <- #n (checkout step 1/2/3/.../n)
 
 #DATA RETRIEVAL-----
 #connect with BigQuery
-connessione<- dbConnect(bigquery(),project='#yourBQproject')
+connection<- dbConnect(bigquery(),project='#yourBQproject')
 
 #Query for data retrieval
 query <- paste0('WITH Drops as (
@@ -62,7 +62,7 @@ query <- paste0('WITH Drops as (
                 ')
 
 #executing the query on BigQuery
-dataset<-DBI::dbGetQuery(connessione,query)
+dataset<-DBI::dbGetQuery(connection,query)
 
 #DATA WRANGLING----- 
 
