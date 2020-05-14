@@ -1,3 +1,9 @@
+#load packages
+library(bigrquery)
+library(tidyverse)
+library(gridExtra)
+library (plotly)
+
 #set the parameters
 tableBQid<-#yourBQtableID
 startDate<- #startDate# (Format:AAAAMMDD)
