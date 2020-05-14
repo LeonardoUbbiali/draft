@@ -69,10 +69,10 @@ dataset<-DBI::dbGetQuery(connection,query)
 #converting "Date" in date type
 dataset$Date<-as.Date(dataset$Date, "%Y%m%d")
 
-#rimozione NA
+#NA=0
 dataset[is.na(dataset)] <-0
 
-#raggruppo per le dimensioni di interesse e calculo DropOff rate
+#grouping by date and calculating summary statistics
 ds<-dataset%>%
   group_by(Date)%>%
   summarise(stepSessions = sum(stepSessions),
